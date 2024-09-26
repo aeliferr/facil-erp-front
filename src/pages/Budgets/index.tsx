@@ -35,8 +35,8 @@ const Budgets: React.FC = () => {
     fetchBudgets();
   }, []);
 
-  const editInvoice = (budgetId: string) => {
-    navigate(`/edit-invoice/${budgetId}`);
+  const editBudget = (budgetId: string) => {
+    navigate(`/update-budget/${budgetId}`);
   };
 
   const createNewBudget = () => {
@@ -98,7 +98,7 @@ const Budgets: React.FC = () => {
                     >
                       Imprimir
                     </Button>
-                    <Button onClick={() => editInvoice(budget.id)}>Editar</Button>
+                    <Button onClick={() => editBudget(budget.id)}>Editar</Button>
                   </TableCell>
                 </TableRow>
               ))}

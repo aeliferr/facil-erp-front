@@ -5,6 +5,7 @@ import { Protected } from '@/components/layout/Protected'
 import { AppLayout } from '@/components/layout/AppLayout'
 import Budgets from '@/pages/Budgets'
 import CreateBudget from '@/pages/Budgets/CreateBudget'
+import UpdateBudget from './pages/Budgets/UpdateBudget'
 
 
 
@@ -45,6 +46,15 @@ export const router = createBrowserRouter([
           {
             path: '/create-budget',
             element: <CreateBudget />,
+          },
+        ],
+      },
+      {
+        element: <AppLayout />,
+        children: [
+          {
+            path: '/update-budget/:id',
+            element: <UpdateBudget />,
           },
         ],
       }

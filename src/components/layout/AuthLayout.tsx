@@ -10,7 +10,7 @@ export function AuthLayout() {
   }
 
   return (
-    <div className="flex h-screen w-full antialiased">
+    <div className="flex h-screen w-full mx-auto antialiased">
       <Outlet />
     </div>
   )
