@@ -60,6 +60,19 @@ const Budgets: React.FC = () => {
     }
   };
 
+  const printContract = async (budgetId: string) => {
+    try {
+      const response = await api.get(`/contract/from-budget/${budgetId}/print`, {
+        responseType: "blob",
+      });
+
+      const pdfUrl = URL.createObjectURL(response.data);
+      window.open(pdfUrl);
+    } catch (error) {
+      console.error("Error printing contract:", error);
+    }
+  };
+
   return (
     <div className="container mx-auto py-8">
       <Card className="shadow-lg">
@@ -99,6 +112,7 @@ const Budgets: React.FC = () => {
                       Imprimir
                     </Button>
                     <Button onClick={() => editBudget(budget.id)}>Editar</Button>
+                    <Button onClick={() => printContract(budget.id)}>Imprimir Contrato</Button>
                   </TableCell>
                 </TableRow>
               ))}
